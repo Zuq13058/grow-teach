@@ -1,6 +1,6 @@
-# Build and deploy to GitHub Pages (gh-pages branch)
+# Build static files and deploy to GitHub Pages from /docs on main
 # Site: https://zuq13058.github.io/grow-teach/
-# In repo Settings → Pages, set Source to "Deploy from a branch", branch: gh-pages, folder: / (root)
+# In repo Settings → Pages: Source = "Deploy from a branch", Branch = main, Folder = /docs
 name: Deploy to GitHub Pages
 
 on:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # required to push to gh-pages branch
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -27,22 +27,31 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build for GitHub Pages
+      - name: Build static files for GitHub Pages
         run: npm run build:gh-pages
         env:
           VITE_BASE_PATH: "/grow-teach/"
 
-      - name: Verify build output
+      - name: Verify static build
         run: |
           if grep -q "/src/main.tsx" dist/index.html; then
-            echo "ERROR: dist/index.html is the dev version. Build may have failed or VITE_BASE_PATH was not set."
+            echo "ERROR: Build produced dev index. VITE_BASE_PATH may be missing."
             exit 1
           fi
-          echo "Build output looks correct (built assets in index.html)."
+          echo "Static build OK: index.html uses built assets."
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
+      - name: Copy static files to docs
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -r dist/* docs/
+          echo "Contents of docs (static site):"
+          ls -la docs/
+
+      - name: Deploy to main (docs folder)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "Deploy static site to docs [skip ci]"
+          git push origin main

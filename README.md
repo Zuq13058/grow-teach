@@ -71,12 +71,10 @@ This project is built with:
 
 1. In your repo on GitHub, go to **Settings → Pages**.
 2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Choose branch **gh-pages** and folder **/ (root)**. Save.
-4. Push to `main` (or run the "Deploy to GitHub Pages" workflow from the Actions tab). The workflow builds the app and pushes it to the `gh-pages` branch; the site will be at **https://zuq13058.github.io/grow-teach/**.
+3. Choose **Branch:** `main`, **Folder:** `/docs`. Save.
+4. Push to `main` or run the **Deploy to GitHub Pages** workflow from the **Actions** tab. The workflow builds the app to static files, puts them in the `docs/` folder, and pushes to `main`. The site is at **https://zuq13058.github.io/grow-teach/**.
 
-**If you see 404 for `/src/main.tsx`:** GitHub Pages is serving the wrong branch. Go to **Settings → Pages** and set **Branch** to **gh-pages** (not `main`). The repo root has the dev index; the built app is only on `gh-pages`.
-
-To build for GitHub Pages locally (Linux/macOS): `VITE_BASE_PATH=/grow-teach/ npm run build:gh-pages`. On Windows: `set VITE_BASE_PATH=/grow-teach/ && npm run build:gh-pages`.
+To build static files locally (Linux/macOS): `VITE_BASE_PATH=/grow-teach/ npm run build:gh-pages`. On Windows: `set VITE_BASE_PATH=/grow-teach/ && npm run build:gh-pages`.
 
 **Lovable**
 
