@@ -32,6 +32,14 @@ jobs:
         env:
           VITE_BASE_PATH: "/grow-teach/"
 
+      - name: Verify build output
+        run: |
+          if grep -q "/src/main.tsx" dist/index.html; then
+            echo "ERROR: dist/index.html is the dev version. Build may have failed or VITE_BASE_PATH was not set."
+            exit 1
+          fi
+          echo "Build output looks correct (built assets in index.html)."
+
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
