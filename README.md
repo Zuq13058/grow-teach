@@ -70,8 +70,9 @@ This project is built with:
 **GitHub Pages**
 
 1. In your repo on GitHub, go to **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Push to the `main` branch (or run the workflow manually). The app will be at **https://zuq13058.github.io/grow-teach/**.
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Choose branch **gh-pages** and folder **/ (root)**. Save.
+4. Push to `main` (or run the "Deploy to GitHub Pages" workflow from the Actions tab). The workflow builds the app and pushes it to the `gh-pages` branch; the site will be at **https://zuq13058.github.io/grow-teach/**.
 
 To build for GitHub Pages locally (Linux/macOS): `VITE_BASE_PATH=/grow-teach/ npm run build:gh-pages`. On Windows: `set VITE_BASE_PATH=/grow-teach/ && npm run build:gh-pages`.
 
