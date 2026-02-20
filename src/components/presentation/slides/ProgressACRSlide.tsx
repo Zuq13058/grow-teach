@@ -57,7 +57,7 @@ export default function ProgressACRSlide() {
           Sub Rock 1
         </span>
         <h2 className="font-display text-[52px] font-bold text-foreground mt-4 leading-tight">
-          Teacher Voice & Evaluation — Progress
+          Teacher Voice & Evaluation Tool
         </h2>
       </motion.div>
 

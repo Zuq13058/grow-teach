@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, TrendingDown, Target } from "lucide-react";
+import { AlertTriangle, TrendingDown } from "lucide-react";
 
 export default function ProblemSlide() {
   const problems = [
@@ -12,17 +12,10 @@ export default function ProblemSlide() {
     },
     {
       icon: AlertTriangle,
-      title: "Generic Data Scoring",
+      title: "Subjective Data Scoring",
       desc: "Evaluation criteria don't reflect actual classroom effectiveness",
       color: "text-slide-orange",
       bg: "bg-slide-orange/10",
-    },
-    {
-      icon: Target,
-      title: "Student Impact Gap",
-      desc: "No direct link between promotion decisions and student learning outcomes",
-      color: "text-primary",
-      bg: "bg-primary/10",
     },
   ];
 
@@ -44,7 +37,7 @@ export default function ProblemSlide() {
       </motion.div>
 
       <div className="flex-1 flex items-center mt-8">
-        <div className="grid grid-cols-3 gap-10 w-full">
+        <div className="grid grid-cols-2 gap-10 w-full max-w-[1200px] mx-auto">
           {problems.map((p, i) => (
             <motion.div
               key={i}

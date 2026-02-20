@@ -8,6 +8,7 @@ import SubRocksSlide from "./slides/SubRocksSlide";
 import ExecutionPlanSlide from "./slides/ExecutionPlanSlide";
 import RevisedPlanSlide from "./slides/RevisedPlanSlide";
 import ProgressACRSlide from "./slides/ProgressACRSlide";
+import SurveyResultsSlide from "./slides/SurveyResultsSlide";
 import PrincipalWorkloadSlide from "./slides/PrincipalWorkloadSlide";
 import StakeholderSlide from "./slides/StakeholderSlide";
 import NextStepsSlide from "./slides/NextStepsSlide";
@@ -19,6 +20,7 @@ const slides = [
   ExecutionPlanSlide,
   RevisedPlanSlide,
   ProgressACRSlide,
+  SurveyResultsSlide,
   PrincipalWorkloadSlide,
   StakeholderSlide,
   NextStepsSlide,
