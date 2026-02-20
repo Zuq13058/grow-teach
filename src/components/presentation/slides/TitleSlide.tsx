@@ -52,7 +52,7 @@ export default function TitleSlide() {
         className="absolute bottom-16 left-40 right-40 flex justify-between items-center text-muted-foreground text-lg"
       >
         <span>Performance-Based Promotion Framework</span>
-        <span className="text-primary font-medium">2025</span>
+        <span className="text-primary font-medium">2026</span>
       </motion.div>
     </div>
   );
