@@ -9,9 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write   # required to push to gh-pages branch
 
 jobs:
   build-and-deploy:
