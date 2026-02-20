@@ -12,6 +12,7 @@ import SurveyResultsSlide from "./slides/SurveyResultsSlide";
 import PrincipalWorkloadSlide from "./slides/PrincipalWorkloadSlide";
 import StakeholderSlide from "./slides/StakeholderSlide";
 import NextStepsSlide from "./slides/NextStepsSlide";
+import ThankYouSlide from "./slides/ThankYouSlide";
 
 const slides = [
   TitleSlide,
@@ -24,6 +25,7 @@ const slides = [
   PrincipalWorkloadSlide,
   StakeholderSlide,
   NextStepsSlide,
+  ThankYouSlide,
 ];
 
 const slideVariants = {
