@@ -3,7 +3,9 @@
 ## Repository
 
 - **Clone**: https://github.com/Zuq13058/grow-teach.git  
-- **Live (GitHub Pages)**: https://zuq13058.github.io/grow-teach/
+- **Live app (use this exact link)**: **https://zuq13058.github.io/grow-teach/**
+
+> **If the page is blank or shows "GET /src/main.tsx 404":** You must open the URL **with `/grow-teach/`** at the end. Do not open `https://zuq13058.github.io/` alone. In the repo **Settings → Pages**, set **Branch** to `main`, **Folder** to `/docs`, and ensure the deploy workflow has run so the `docs/` folder exists on `main`.
 
 ## Project info
 

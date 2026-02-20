@@ -44,14 +44,16 @@ jobs:
         run: |
           rm -rf docs
           mkdir -p docs
-          cp -r dist/* docs/
+          cp -r dist/. docs/
+          touch docs/.nojekyll
           echo "Contents of docs (static site):"
           ls -la docs/
+          ls -la docs/assets/ || true
 
       - name: Deploy to main (docs folder)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/
+          git add -f docs/
           git diff --staged --quiet || git commit -m "Deploy static site to docs [skip ci]"
           git push origin main
