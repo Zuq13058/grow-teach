@@ -1,4 +1,9 @@
-# Welcome to your Lovable project
+# Grow Teach
+
+## Repository
+
+- **Clone**: https://github.com/Zuq13058/grow-teach.git  
+- **Live (GitHub Pages)**: https://zuq13058.github.io/grow-teach/
 
 ## Project info
 
@@ -61,6 +66,16 @@ This project is built with:
 - Tailwind CSS
 
 ## How can I deploy this project?
+
+**GitHub Pages**
+
+1. In your repo on GitHub, go to **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push to the `main` branch (or run the workflow manually). The app will be at **https://zuq13058.github.io/grow-teach/**.
+
+To build for GitHub Pages locally (Linux/macOS): `VITE_BASE_PATH=/grow-teach/ npm run build:gh-pages`. On Windows: `set VITE_BASE_PATH=/grow-teach/ && npm run build:gh-pages`.
+
+**Lovable**
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 

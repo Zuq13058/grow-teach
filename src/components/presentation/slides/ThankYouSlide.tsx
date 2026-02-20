@@ -38,6 +38,23 @@ export default function ThankYouSlide() {
         >
           Questions, feedback, or ideas — we'd love to hear from you.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="mt-14"
+        >
+          <p className="text-sm font-semibold text-foreground/80 uppercase tracking-widest mb-4">Team</p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-2xl font-medium text-foreground">
+            <span>Zeeshan Usiad</span>
+            <span>Sameer Sheikh</span>
+            <span>Osama Ahmed</span>
+            <span>Haroon Ali</span>
+            <span>Momina Raja</span>
+            <span>Hasnat Tariq</span>
+          </div>
+        </motion.div>
       </motion.div>
 
       <motion.div

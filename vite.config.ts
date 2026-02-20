@@ -4,7 +4,11 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+// For GitHub Pages: set VITE_BASE_PATH=/grow-teach/ when building
+const base = process.env.VITE_BASE_PATH ?? "/";
+
 export default defineConfig(({ mode }) => ({
+  base,
   server: {
     host: "::",
     port: 8080,

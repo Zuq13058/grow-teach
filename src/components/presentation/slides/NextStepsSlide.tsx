@@ -21,7 +21,7 @@ export default function NextStepsSlide() {
       <div className="absolute top-0 left-0 right-0 h-1.5 slide-accent-line" />
 
       <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-        <span className="text-primary text-lg font-semibold uppercase tracking-widest">
+        <span className="text-primary text-xl font-semibold uppercase tracking-widest">
           Looking Ahead
         </span>
         <h2 className="font-display text-[56px] font-bold text-foreground mt-4 leading-tight">
@@ -29,35 +29,35 @@ export default function NextStepsSlide() {
         </h2>
       </motion.div>
 
-      <div className="flex-1 flex gap-12 mt-10">
-        {/* Steps list */}
-        <div className="flex-1 flex flex-col gap-5">
+      <div className="flex-1 flex gap-12 mt-8 min-h-0">
+        {/* Steps list - larger text, spread vertically to use bottom space */}
+        <div className="flex-1 flex flex-col justify-evenly gap-6">
           {nextSteps.map((step, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 + i * 0.12 }}
-              className="stat-card flex items-center gap-6 py-6"
+              className="stat-card flex items-center gap-7 py-8"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                <step.icon className="w-6 h-6 text-primary" />
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                <step.icon className="w-8 h-8 text-primary" />
               </div>
-              <p className="text-xl font-semibold text-foreground">{step.label}</p>
-              <ArrowRight className="w-5 h-5 text-muted-foreground ml-auto" />
+              <p className="text-2xl font-semibold text-foreground flex-1 leading-snug">{step.label}</p>
+              <ArrowRight className="w-6 h-6 text-foreground/80 shrink-0" />
             </motion.div>
           ))}
         </div>
 
-        {/* KPI Donut */}
+        {/* KPI Donut - larger labels, fill height */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5 }}
-          className="w-[500px] stat-card-gold stat-card flex flex-col items-center justify-center"
+          className="w-[500px] stat-card-gold stat-card flex flex-col items-center justify-center flex-1 min-h-0"
         >
-          <h3 className="text-2xl font-bold text-foreground mb-2">ACR-KPI Tracking Coverage</h3>
-          <p className="text-base text-muted-foreground mb-6">Current + Projected with Digital Tools</p>
+          <h3 className="text-3xl font-bold text-foreground mb-2">ACR-KPI Tracking Coverage</h3>
+          <p className="text-lg text-foreground/90 mb-6">Current + Projected with Digital Tools</p>
           <div className="w-64 h-64">
             <ResponsiveContainer>
               <PieChart>
@@ -79,15 +79,15 @@ export default function NextStepsSlide() {
           </div>
           <div className="flex gap-8 mt-6">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-slide-green" />
-              <span className="text-sm text-muted-foreground">Current 63%</span>
+              <div className="w-4 h-4 rounded-full bg-slide-green" />
+              <span className="text-base font-medium text-foreground">Current 63%</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-primary" />
-              <span className="text-sm text-muted-foreground">+20-25% Digital</span>
+              <div className="w-4 h-4 rounded-full bg-primary" />
+              <span className="text-base font-medium text-foreground">+20-25% Digital</span>
             </div>
           </div>
-          <p className="text-lg text-muted-foreground mt-4 text-center">
+          <p className="text-xl text-foreground/90 mt-4 text-center font-medium">
             Minimizing principal workload while expanding KPI coverage
           </p>
         </motion.div>

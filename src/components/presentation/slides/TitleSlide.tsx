@@ -42,6 +42,15 @@ export default function TitleSlide() {
           <span className="text-foreground font-medium">classroom impact</span>, rather than years of
           service.
         </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="text-lg text-muted-foreground mt-10 font-medium"
+        >
+          Team: Zeeshan Usiad, Sameer Sheikh, Osama Ahmed, Haroon Ali, Momina Raja
+        </motion.p>
       </motion.div>
 
       {/* Bottom bar */}

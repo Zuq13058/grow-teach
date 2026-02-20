@@ -61,49 +61,49 @@ export default function ProgressACRSlide() {
         </h2>
       </motion.div>
 
-      <div className="flex-1 flex gap-10 mt-10">
-        {/* Left: Checklist */}
-        <div className="flex-1 flex flex-col gap-5">
+      <div className="flex-1 flex gap-12 mt-12 min-h-0">
+        {/* Left: Checklist - larger text, more spacing to fill height */}
+        <div className="flex-1 flex flex-col gap-6 justify-evenly">
           {progressItems.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 + i * 0.1 }}
-              className="stat-card flex items-start gap-5 py-6"
+              className="stat-card flex items-start gap-6 py-8"
             >
               <item.icon
-                className={`w-7 h-7 shrink-0 mt-0.5 ${
+                className={`w-9 h-9 shrink-0 mt-0.5 ${
                   item.status === "done" ? "text-slide-green" : "text-primary"
                 }`}
               />
               <div>
-                <p className="text-xl font-semibold text-foreground">{item.label}</p>
+                <p className="text-2xl font-semibold text-foreground leading-snug">{item.label}</p>
                 {item.detail && (
-                  <p className="text-lg text-primary mt-1 font-medium">{item.detail}</p>
+                  <p className="text-xl text-primary mt-2 font-medium">{item.detail}</p>
                 )}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Right: Charts */}
-        <div className="w-[520px] flex flex-col gap-8">
+        {/* Right: Charts - larger labels, use more space */}
+        <div className="w-[520px] flex flex-col gap-8 justify-evenly">
           {/* Survey Progress */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5 }}
-            className="stat-card-gold stat-card flex-1 flex flex-col items-center justify-center"
+            className="stat-card-gold stat-card flex-1 flex flex-col items-center justify-center min-h-[280px]"
           >
-            <p className="text-lg text-muted-foreground font-medium mb-4">Teacher Survey Progress</p>
-            <div className="w-48 h-48">
+            <p className="text-xl text-foreground font-semibold mb-4">Teacher Survey Progress</p>
+            <div className="w-52 h-52">
               <ResponsiveContainer>
                 <PieChart>
                   <Pie
                     data={surveyData}
-                    innerRadius={55}
-                    outerRadius={80}
+                    innerRadius={60}
+                    outerRadius={88}
                     dataKey="value"
                     startAngle={90}
                     endAngle={-270}
@@ -117,7 +117,7 @@ export default function ProgressACRSlide() {
               </ResponsiveContainer>
             </div>
             <p className="text-4xl font-bold text-primary mt-2">81%</p>
-            <p className="text-base text-muted-foreground">650 of 800 target</p>
+            <p className="text-lg text-foreground/90 font-medium">650 of 800 target</p>
           </motion.div>
 
           {/* KPI Mapping */}
@@ -125,12 +125,12 @@ export default function ProgressACRSlide() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.65 }}
-            className="stat-card flex items-center gap-6 py-6"
+            className="stat-card flex items-center gap-6 py-8"
           >
-            <Target className="w-10 h-10 text-slide-green shrink-0" />
+            <Target className="w-12 h-12 text-slide-green shrink-0" />
             <div>
               <p className="text-3xl font-bold text-foreground">63%</p>
-              <p className="text-base text-muted-foreground">
+              <p className="text-lg text-foreground/90 font-medium">
                 ACR-KPIs trackable via Digital Coach
               </p>
             </div>
