@@ -12,6 +12,10 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+      display: ['Playfair Display', 'serif'],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -46,6 +50,18 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        slide: {
+          gold: "hsl(var(--slide-gold))",
+          "gold-muted": "hsl(var(--slide-gold-muted))",
+          blue: "hsl(var(--slide-blue))",
+          green: "hsl(var(--slide-green))",
+          red: "hsl(var(--slide-red))",
+          purple: "hsl(var(--slide-purple))",
+          teal: "hsl(var(--slide-teal))",
+          orange: "hsl(var(--slide-orange))",
+          surface: "hsl(var(--slide-surface))",
+          "surface-elevated": "hsl(var(--slide-surface-elevated))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
