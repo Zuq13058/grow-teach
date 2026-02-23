@@ -1,0 +1,6 @@
+# Force npm (project uses package-lock.json, not Bun)
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = ["npm run build"]
