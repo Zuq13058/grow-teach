@@ -78,6 +78,15 @@ This project is built with:
 
 To build static files locally (Linux/macOS): `VITE_BASE_PATH=/grow-teach/ npm run build:gh-pages`. On Windows: `set VITE_BASE_PATH=/grow-teach/ && npm run build:gh-pages`.
 
+**Railway**
+
+1. Sign in at [railway.app](https://railway.app) and create a new project.
+2. Click **Deploy from GitHub repo** and select **Zuq13058/grow-teach** (or your fork).
+3. Railway will use `railway.json`: **Build** = `npm run build`, **Start** = `npm start` (serves the built app from `dist/` with the `serve` package).
+4. After deploy, open the generated URL (e.g. `https://grow-teach-production.up.railway.app`) or add a custom domain in the service **Settings**.
+
+No `VITE_BASE_PATH` is set on Railway, so the app runs at the root path `/`.
+
 **Lovable**
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
